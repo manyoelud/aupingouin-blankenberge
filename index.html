@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Au Pingouin — Tea-room in Blankenberge sinds 1949</title>
+<meta name="description" content="Tea-room Au Pingouin in de Kerkstraat van Blankenberge, sinds 1949. Brusselse wafels, pannenkoeken, ijs en koffie. Kerkstraat 33.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;1,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--mist:#F3F2EF;--kaart:#FFFFFF;--leisteen:#111111;--oker:#B8862E;--oker-d:#946A1F;--oker-licht:#EADCC2;--grijs:#5E5E5E;--lijn:#DDDBD6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}html,body{overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--mist);color:var(--leisteen);font-family:"Instrument Sans",system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+.cond,h1,.h2,.koptekst h2,.gerecht h3,.grootwoord,.label b,.band,.twintig b,.score b{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-style:italic}
+.kop{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .35s,box-shadow .35s}
+.kop.vast{background:color-mix(in srgb,var(--mist) 92%,transparent);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--lijn)}
+.kop .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.logo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:30px;letter-spacing:.02em;text-decoration:none;line-height:1;color:var(--leisteen);white-space:nowrap}
+.menu{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:15px}
+.menu a{text-decoration:none;opacity:.85}.menu a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
+.rechts{display:flex;align-items:center;gap:14px}
+.talen{display:flex;gap:2px;font-size:13px;font-weight:600}
+.talen button{background:none;border:0;padding:6px 7px;border-radius:6px;cursor:pointer;color:var(--grijs);font:inherit}
+.talen button[aria-pressed="true"]{color:var(--leisteen);background:#fff}
+.knop{display:inline-block;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px;background:var(--oker);color:#fff;border:1px solid var(--oker);transition:background .2s}
+.knop:hover{background:var(--oker-d);border-color:var(--oker-d)}
+.knop.rand{background:transparent;color:var(--leisteen);border-color:var(--leisteen)}.knop.rand:hover{background:var(--leisteen);color:#fff}
+.knop.klein{padding:9px 16px;font-size:14px}
+@media(max-width:900px){.menu{display:none}}@media(max-width:560px){.kop .knop.klein{display:none}}
+.held{position:relative;min-height:100vh;padding:120px 0 60px;display:flex;align-items:center;overflow:hidden}
+.held .wrap{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;position:relative;z-index:2}
+.achter{position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-style:italic;font-size:clamp(200px,32vw,520px);color:transparent;-webkit-text-stroke:2px rgba(17,17,17,.10);white-space:nowrap;line-height:1;pointer-events:none;z-index:1;clip-path:inset(0 100% 0 0);animation:schrijf 2.2s cubic-bezier(.6,.1,.2,1) .2s forwards}
+@keyframes schrijf{to{clip-path:inset(0 0 0 0)}}
+.sinds{font-size:15px;color:var(--grijs);margin:0 0 14px}
+.held h1{font-size:clamp(44px,6vw,84px);line-height:.95;margin:0;letter-spacing:-.01em}
+.held p.sub{font-size:19px;max-width:32ch;margin:22px 0 0;opacity:.85}
+.status{display:inline-flex;align-items:center;gap:10px;margin-top:26px;padding:8px 14px 8px 11px;border-radius:999px;background:#fff;font-size:15px;color:#1e2328}
+.status i{width:9px;height:9px;border-radius:50%;background:#3faa63;box-shadow:0 0 0 4px rgba(63,170,99,.18)}
+.status.dicht i{background:#d1603d;box-shadow:0 0 0 4px rgba(209,96,61,.18)}
+.knoppen{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.pot{position:relative;justify-self:center;width:min(560px,100%)}
+.pot img{width:100%;height:auto;filter:drop-shadow(0 40px 40px rgba(20,25,30,.28));animation:landt 1.3s cubic-bezier(.2,.8,.2,1) .5s both;will-change:transform}
+@keyframes landt{from{opacity:0;transform:translateY(60px) rotate(-14deg) scale(.9)}to{opacity:1;transform:none}}
+.label{position:absolute;right:2%;bottom:4%;background:var(--leisteen);color:#fff;border-radius:14px;padding:12px 16px;font-size:14px;line-height:1.3;animation:landt 1s .9s both}
+.label b{display:block;font-size:22px}
+@media(max-width:860px){.held{padding-top:100px;min-height:auto}.held .wrap{grid-template-columns:1fr}.pot{width:min(420px,92%);margin-top:10px}.achter{top:62%}}
+.strook{background:var(--leisteen);color:#fff;overflow:hidden;padding:18px 0}
+.band{display:flex;gap:44px;width:max-content;animation:schuif 40s linear infinite;font-size:30px}
+.band span{display:flex;align-items:center;gap:44px;white-space:nowrap}.band i{width:10px;height:10px;border-radius:50%;background:var(--oker);display:inline-block}
+@keyframes schuif{to{transform:translateX(-50%)}}
+section{padding:110px 0}
+.kaartsectie{background:var(--kaart)}
+.koptekst{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:34px}
+.koptekst h2,.h2{font-size:clamp(44px,6vw,76px);line-height:.95;margin:0}
+.koptekst p{margin:0;color:var(--grijs);max-width:44ch}
+@media(max-width:820px){.koptekst{grid-template-columns:1fr;gap:12px}}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:80px;z-index:5;background:var(--kaart);padding:10px 0 14px}
+.tabs button{border:1px solid var(--lijn);background:#fff;border-radius:999px;padding:10px 18px;font:600 15px "Instrument Sans",sans-serif;cursor:pointer;color:var(--grijs)}
+.tabs button[aria-selected="true"]{background:var(--leisteen);border-color:var(--leisteen);color:#fff}
+.groep{display:none}.groep.aan{display:block}
+.grootwoord{font-size:clamp(64px,11vw,160px);line-height:.85;color:var(--oker-licht);margin:24px 0 10px}
+.gerechten{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+@media(max-width:900px){.gerechten{grid-template-columns:1fr 1fr}}@media(max-width:560px){.gerechten{grid-template-columns:1fr}}
+.gerecht{background:#fff;border-radius:22px;padding:22px 24px 26px;opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.groep.aan .gerecht{opacity:1;transform:none}.groep.aan .gerecht:nth-child(2){transition-delay:.08s}.groep.aan .gerecht:nth-child(3){transition-delay:.16s}
+.gerecht .beeld{height:230px;display:flex;align-items:center;justify-content:center;margin:-6px 0 8px}
+.gerecht .beeld img{max-height:100%;width:auto;filter:drop-shadow(0 18px 22px rgba(20,25,30,.22));transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.gerecht:hover .beeld img{transform:rotate(-6deg) scale(1.06)}
+.gerecht h3{font-size:30px;line-height:1;margin:0 0 8px}.gerecht p{margin:0;color:var(--grijs);font-size:16px}
+.noot{margin:34px 0 0;color:var(--grijs);font-size:15px}
+.terras{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;padding:0;overflow:hidden;background:var(--leisteen)}
+.terras img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.terras::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,18,22,0) 30%,rgba(15,18,22,.82) 100%)}
+.terras .wrap{position:relative;z-index:2;padding:0 0 70px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.terras .h2{color:#fff}
+.feiten{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.feiten li{display:grid;grid-template-columns:28px 1fr;gap:12px;font-size:16px}.feiten li strong{display:block}.feiten li span{color:rgba(255,255,255,.75)}
+.feiten svg{width:24px;height:24px;stroke:var(--oker);fill:none;stroke-width:1.7;margin-top:1px}
+@media(max-width:820px){.terras .wrap{grid-template-columns:1fr}}
+.verhaal .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.twintig{position:relative;line-height:.8}
+.twintig b{font-size:clamp(150px,22vw,300px);display:block}
+.twintig .eenheid{position:absolute;right:4%;bottom:-8%;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-style:italic;font-size:clamp(40px,5vw,64px);color:var(--oker)}
+.verhaal p{font-size:18px;opacity:.85;max-width:46ch}
+.fotoduo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+.fotoduo img{border-radius:16px;aspect-ratio:4/5;object-fit:cover;width:100%}.fotoduo img:last-child{margin-top:40px}
+@media(max-width:820px){.verhaal .wrap{grid-template-columns:1fr;gap:20px}}
+.reviews{background:var(--kaart)}
+.score{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.score b{font-size:96px;line-height:1}.sterren{color:var(--oker);font-size:26px;letter-spacing:3px}.score small{color:var(--grijs);font-size:16px}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}@media(max-width:860px){.quotes{grid-template-columns:1fr}}
+blockquote{margin:0;background:#fff;border-radius:22px;padding:28px;font-size:17px;color:#1e2328}blockquote p{margin:0 0 14px}blockquote footer{color:#6b747b;font-size:14px}
+.praktisch .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px}@media(max-width:820px){.praktisch .wrap{grid-template-columns:1fr}}
+.uren{width:100%;border-collapse:collapse;font-size:17px;margin-top:26px}
+.uren td{padding:11px 0;border-bottom:1px solid var(--lijn)}.uren td:last-child{text-align:right}.uren tr.nu td{font-weight:600}.uren td.dicht{color:var(--grijs)}
+.adres{margin:26px 0 0;font-size:18px;line-height:1.7}.adres a{text-decoration:none;border-bottom:1px solid var(--oker)}
+.kaartbox{border-radius:22px;overflow:hidden;min-height:420px;background:#dfe5e8}.kaartbox iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+footer.voet{padding:40px 0;border-top:1px solid var(--lijn)}footer.voet .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:var(--grijs);font-size:14px}
+.belbalk{display:none}
+@media(max-width:720px){.belbalk{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:12px;right:12px;bottom:12px;z-index:40}.belbalk .knop{text-align:center;padding:14px 10px;box-shadow:0 10px 30px rgba(20,25,30,.25)}.belbalk .knop.rand{background:#fff;color:#1e2328}body{padding-bottom:84px}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--oker);outline-offset:3px;border-radius:6px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.achter{clip-path:none}.reveal,.gerecht{opacity:1;transform:none}}
+.strook{background:repeating-linear-gradient(90deg,#111 0 26px,#1e1e1e 26px 52px)}.gerecht{background:#F7F6F3}.kaartsectie{background:#fff}.reviews{background:#fff}
+</style>
+</head>
+<body>
+<header class="kop" id="kop"><div class="wrap">
+  <a class="logo" href="#top">Au Pingouin</a>
+  <ul class="menu"><li><a href="#kaart" data-t="nav_kaart">De kaart</a></li><li><a href="#terras" data-t="nav_terras">De zaak</a></li><li><a href="#verhaal" data-t="nav_verhaal">Ons verhaal</a></li><li><a href="#praktisch" data-t="nav_uren">Openingsuren</a></li></ul>
+  <div class="rechts"><div class="talen" role="group" aria-label="Taal"><button data-lang="nl">NL</button><button data-lang="fr">FR</button><button data-lang="en">EN</button><button data-lang="de">DE</button></div>
+  <a class="knop klein" href="tel:+32476633235" data-t="bel_kort">Bellen</a></div>
+</div></header>
+<main id="top">
+<section class="held">
+  <div class="achter" aria-hidden="true">1949</div>
+  <div class="wrap">
+    <div>
+      <p class="sinds" data-t="sinds">Tea-room en restaurant in Blankenberge, sinds 1949</p>
+      <h1 data-t="held_titel">De reuzenwafel van Blankenberge.</h1>
+      <p class="sub" data-t="held_sub">Brusselse wafels, verse pannenkoeken, ijs en koffie, op twee minuten van de dijk.</p>
+      <div class="status" id="status"><i></i><span>…</span></div>
+      <div class="knoppen"><a class="knop" href="tel:+32476633235" data-t="bel">Bel ons</a><a class="knop rand" href="#kaart" data-t="naar_kaart">Bekijk de kaart</a></div>
+    </div>
+    <div class="pot"><img id="pot" src="img/held.webp" alt="Brusselse wafel met Biscoff en slagroom"><div class="label"><b data-t="label_titel">Wafel Biscoff</b><span data-t="label_tekst">Met slagroom</span></div></div>
+  </div>
+</section>
+<div class="strook" aria-hidden="true"><div class="band" id="band"></div></div>
+<section class="kaartsectie" id="kaart"><div class="wrap">
+  <div class="koptekst reveal"><h2 data-t="kaart_titel">De kaart</h2><p data-t="kaart_intro">Alles wordt vers gemaakt wanneer u bestelt. Ook croques, toasts en salades voor wie liever hartig eet.</p></div>
+  <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-groep="0" data-t="tab0">Wafels &amp; pannenkoeken</button><button role="tab" aria-selected="false" data-groep="1" data-t="tab1">IJs</button><button role="tab" aria-selected="false" data-groep="2" data-t="tab2">Koffie</button></div>
+  <div class="groep aan" id="g-0" role="tabpanel"><div class="grootwoord" data-t="tab0">Wafels &amp; pannenkoeken</div><div class="gerechten"><article class="gerecht"><div class="beeld"><img src="img/g0_0.webp" alt="" loading="lazy"></div><h3 data-t="g0_0">Brusselse wafel</h3><p data-t="g0_0_t">Licht en krokant, met poedersuiker of warme chocoladesaus.</p></article><article class="gerecht"><div class="beeld"><img src="img/g0_1.webp" alt="" loading="lazy"></div><h3 data-t="g0_1">Pannenkoek</h3><p data-t="g0_1_t">Vers gebakken, nooit voorgebakken. Met suiker, siroop of confituur.</p></article><article class="gerecht"><div class="beeld"><img src="img/g0_2.webp" alt="" loading="lazy"></div><h3 data-t="g0_2">Wafel met slagroom</h3><p data-t="g0_2_t">De klassieker, met een flinke toef verse slagroom.</p></article></div></div>
+  <div class="groep" id="g-1" role="tabpanel"><div class="grootwoord" data-t="tab1">IJs</div><div class="gerechten"><article class="gerecht"><div class="beeld"><img src="img/g1_0.webp" alt="" loading="lazy"></div><h3 data-t="g1_0">Dame blanche</h3><p data-t="g1_0_t">Vanille-ijs, slagroom en een krokant wafeltje.</p></article><article class="gerecht"><div class="beeld"><img src="img/g1_1.webp" alt="" loading="lazy"></div><h3 data-t="g1_1">Coupe aardbeien</h3><p data-t="g1_1_t">Verse aardbeien, ijs en saus. De zomer in een coupe.</p></article><article class="gerecht"><div class="beeld"><img src="img/g1_2.webp" alt="" loading="lazy"></div><h3 data-t="g1_2">Banana split</h3><p data-t="g1_2_t">Banaan, drie bollen ijs, chocolade en slagroom.</p></article></div></div>
+  <div class="groep" id="g-2" role="tabpanel"><div class="grootwoord" data-t="tab2">Koffie</div><div class="gerechten"><article class="gerecht"><div class="beeld"><img src="img/g2_0.webp" alt="" loading="lazy"></div><h3 data-t="g2_0">Latte macchiato</h3><p data-t="g2_0_t">Of een cappuccino, een thee, een milkshake. Om bij de wafel te nemen.</p></article></div></div>
+  <p class="noot" data-t="noot">Ook croques, toasts, salades, milkshakes en thee. Vraag naar de kaart van de dag.</p>
+</div></section>
+<section class="terras" id="terras"><img src="img/terras.jpg" alt="" loading="lazy">
+  <div class="wrap"><div class="reveal"><h2 class="h2" data-t="terras_titel">Even binnenwandelen</h2><p data-t="terras_tekst" style="max-width:44ch;font-size:18px;color:rgba(255,255,255,.85)">Een lichte zaal met kroonluchters, midden in de winkelstraat. Even weg van de drukte op de dijk.</p></div>
+  <ul class="feiten reveal"><li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg><div><strong data-t="f0">In het centrum</strong><span data-t="f0_t">Kerkstraat 33, op twee minuten van de dijk.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M12 3c-3 4-5 6-5 9a5 5 0 0 0 10 0c0-3-2-5-5-9z"/></svg><div><strong data-t="f1">Vers gebakken</strong><span data-t="f1_t">Wafels en pannenkoeken op bestelling.</span></div></li><li><svg viewBox="0 0 24 24"><path d="M12 3c-3 4-5 6-5 9a5 5 0 0 0 10 0c0-3-2-5-5-9z"/></svg><div><strong data-t="f2">Ook om mee te nemen</strong><span data-t="f2_t">Een wafel voor op de wandeling naar zee.</span></div></li></ul></div>
+</section>
+<section class="verhaal" id="verhaal"><div class="wrap">
+  <div class="twintig reveal"><b id="getal">77</b><span class="eenheid" data-t="eenheid">jaar</span></div>
+  <div class="reveal"><h2 class="h2" data-t="verhaal_titel">Al meer dan 75 jaar</h2><p data-t="verhaal_tekst">Au Pingouin bestaat sinds 1949. Generaties badgasten kwamen hier voor een wafel na het strand, en hun kleinkinderen doen het nu nog.</p>
+  <div class="fotoduo"><img src="img/verhaal1.jpg" alt="" loading="lazy"><img src="img/verhaal2.jpg" alt="" loading="lazy"></div></div>
+</div></section>
+<section class="reviews"><div class="wrap">
+  <div class="score reveal"><b>4,2</b><span class="sterren">★★★★☆</span><small data-t="reviews_onder">op Google, bij 685 beoordelingen</small></div>
+  <div class="quotes reveal"><blockquote><p>“Gekend voor de reuzenwafels. De pannenkoeken zijn lekker en vers (geen voorgebakken gedoe). Vriendelijke bediening.”</p><footer>Martin, Google</footer></blockquote><blockquote><p>“De Brusselse wafels zijn er heerlijk! Ondanks de drukte maken we hier graag een tussenstop.”</p><footer>Elodie, Google</footer></blockquote><blockquote><p>“Mooie en verzorgde zaak, vlotte bediening, en heerlijke wafels en pannenkoeken. En hun koffie is heerlijk. Komen hier zeker terug.”</p><footer>Bram, Google</footer></blockquote></div>
+</div></section>
+<section class="praktisch" id="praktisch"><div class="wrap">
+  <div class="reveal"><h2 class="h2" data-t="uren_titel">Openingsuren</h2><table class="uren" id="uren"></table>
+  <p class="adres">Kerkstraat 33, 8370 Blankenberge<br><a href="tel:+32476633235">+32 476 63 32 35</a><br><span data-t="uren_noot">Buiten het seizoen open in het weekend. In de zomer elke dag vanaf 11u30.</span></p></div>
+  <div class="kaartbox"><iframe title="Au Pingouin" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=place_id:ChIJg1tr1nyqxEcR5Ik-QANqo4I&amp;output=embed"></iframe></div>
+</div></section>
+</main>
+<footer class="voet"><div class="wrap"><span>© Au Pingouin, Blankenberge</span><span>Kerkstraat 33 · +32 476 63 32 35</span></div></footer>
+<div class="belbalk"><a class="knop" href="tel:+32476633235" data-t="bel_kort">Bellen</a><a class="knop rand" href="https://www.google.com/maps/search/?api=1&amp;query=Au+Pingouin&amp;query_place_id=ChIJg1tr1nyqxEcR5Ik-QANqo4I" data-t="route">Route</a></div>
+<script>
+var T = {"nl": {"g0_0": "Brusselse wafel", "g0_0_t": "Licht en krokant, met poedersuiker of warme chocoladesaus.", "g0_1": "Pannenkoek", "g0_1_t": "Vers gebakken, nooit voorgebakken. Met suiker, siroop of confituur.", "g0_2": "Wafel met slagroom", "g0_2_t": "De klassieker, met een flinke toef verse slagroom.", "tab0": "Wafels & pannenkoeken", "g1_0": "Dame blanche", "g1_0_t": "Vanille-ijs, slagroom en een krokant wafeltje.", "g1_1": "Coupe aardbeien", "g1_1_t": "Verse aardbeien, ijs en saus. De zomer in een coupe.", "g1_2": "Banana split", "g1_2_t": "Banaan, drie bollen ijs, chocolade en slagroom.", "tab1": "IJs", "g2_0": "Latte macchiato", "g2_0_t": "Of een cappuccino, een thee, een milkshake. Om bij de wafel te nemen.", "tab2": "Koffie", "f0": "In het centrum", "f0_t": "Kerkstraat 33, op twee minuten van de dijk.", "f1": "Vers gebakken", "f1_t": "Wafels en pannenkoeken op bestelling.", "f2": "Ook om mee te nemen", "f2_t": "Een wafel voor op de wandeling naar zee.", "nav_kaart": "De kaart", "nav_terras": "De zaak", "nav_verhaal": "Ons verhaal", "nav_uren": "Openingsuren", "bel_kort": "Bellen", "bel": "Bel ons", "naar_kaart": "Bekijk de kaart", "kaart_titel": "De kaart", "uren_titel": "Openingsuren", "route": "Route", "sinds": "Tea-room en restaurant in Blankenberge, sinds 1949", "held_titel": "De reuzenwafel van Blankenberge.", "held_sub": "Brusselse wafels, verse pannenkoeken, ijs en koffie, op twee minuten van de dijk.", "label_titel": "Wafel Biscoff", "label_tekst": "Met slagroom", "kaart_intro": "Alles wordt vers gemaakt wanneer u bestelt. Ook croques, toasts en salades voor wie liever hartig eet.", "noot": "Ook croques, toasts, salades, milkshakes en thee. Vraag naar de kaart van de dag.", "terras_titel": "Even binnenwandelen", "terras_tekst": "Een lichte zaal met kroonluchters, midden in de winkelstraat. Even weg van de drukte op de dijk.", "verhaal_titel": "Al meer dan 75 jaar", "verhaal_tekst": "Au Pingouin bestaat sinds 1949. Generaties badgasten kwamen hier voor een wafel na het strand, en hun kleinkinderen doen het nu nog.", "eenheid": "jaar", "reviews_onder": "op Google, bij 685 beoordelingen", "uren_noot": "Buiten het seizoen open in het weekend. In de zomer elke dag vanaf 11u30.", "dagen": ["zondag", "maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag"], "gesloten": "Gesloten", "nu_open": "Nu open · vandaag tot ", "open_vanaf": "Vandaag open vanaf ", "nu_dicht": "Nu gesloten · ", "morgen": "morgen", "vanaf": " open vanaf ", "band": ["Brusselse wafel", "Pannenkoek", "Wafel met slagroom", "Dame blanche", "Coupe aardbeien", "Banana split", "Latte macchiato"]}, "fr": {"g0_0": "Gaufre de Bruxelles", "g0_0_t": "Légère et croustillante, au sucre glace ou à la sauce chocolat chaude.", "g0_1": "Crêpe", "g0_1_t": "Cuite minute, jamais précuite. Au sucre, au sirop ou à la confiture.", "g0_2": "Gaufre chantilly", "g0_2_t": "Le classique, avec une belle touche de chantilly fraîche.", "tab0": "Gaufres & crêpes", "g1_0": "Dame blanche", "g1_0_t": "Glace vanille, chantilly et une gaufrette croustillante.", "g1_1": "Coupe fraises", "g1_1_t": "Fraises fraîches, glace et coulis. L’été dans une coupe.", "g1_2": "Banana split", "g1_2_t": "Banane, trois boules, chocolat et chantilly.", "tab1": "Glaces", "g2_0": "Latte macchiato", "g2_0_t": "Ou un cappuccino, un thé, un milkshake. Pour accompagner la gaufre.", "tab2": "Café", "f0": "En plein centre", "f0_t": "Kerkstraat 33, à deux minutes de la digue.", "f1": "Cuit minute", "f1_t": "Gaufres et crêpes à la commande.", "f2": "Aussi à emporter", "f2_t": "Une gaufre pour la promenade vers la mer.", "nav_kaart": "La carte", "nav_terras": "Le lieu", "nav_verhaal": "Notre histoire", "nav_uren": "Horaires", "bel_kort": "Appeler", "bel": "Appelez-nous", "naar_kaart": "Voir la carte", "kaart_titel": "La carte", "uren_titel": "Horaires", "route": "Itinéraire", "sinds": "Salon de thé et restaurant à Blankenberge, depuis 1949", "held_titel": "La gaufre géante de Blankenberge.", "held_sub": "Gaufres de Bruxelles, crêpes minute, glaces et café, à deux minutes de la digue.", "label_titel": "Gaufre Biscoff", "label_tekst": "Avec chantilly", "kaart_intro": "Tout est préparé à la commande. Aussi des croques, toasts et salades pour ceux qui préfèrent le salé.", "noot": "Aussi des croques, toasts, salades, milkshakes et thés. Demandez la carte du jour.", "terras_titel": "Entrez un instant", "terras_tekst": "Une salle lumineuse avec lustres, au cœur de la rue commerçante. Loin de l’agitation de la digue.", "verhaal_titel": "Depuis plus de 75 ans", "verhaal_tekst": "Au Pingouin existe depuis 1949. Des générations de vacanciers sont venues ici pour une gaufre après la plage, et leurs petits-enfants le font encore.", "eenheid": "ans", "reviews_onder": "sur Google, 685 avis", "uren_noot": "Hors saison, ouvert le week-end. En été, tous les jours dès 11h30.", "dagen": ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"], "gesloten": "Fermé", "nu_open": "Ouvert · aujourd’hui jusqu’à ", "open_vanaf": "Ouvert aujourd’hui dès ", "nu_dicht": "Fermé · ", "morgen": "demain", "vanaf": " ouvert dès ", "band": ["Gaufre de Bruxelles", "Crêpe", "Gaufre chantilly", "Dame blanche", "Coupe fraises", "Banana split", "Latte macchiato"]}, "en": {"g0_0": "Brussels waffle", "g0_0_t": "Light and crisp, with icing sugar or warm chocolate sauce.", "g0_1": "Pancake", "g0_1_t": "Freshly made, never pre-baked. With sugar, syrup or jam.", "g0_2": "Waffle with whipped cream", "g0_2_t": "The classic, with a generous swirl of fresh whipped cream.", "tab0": "Waffles & pancakes", "g1_0": "Dame blanche", "g1_0_t": "Vanilla ice cream, whipped cream and a crisp wafer.", "g1_1": "Strawberry sundae", "g1_1_t": "Fresh strawberries, ice cream and sauce. Summer in a glass.", "g1_2": "Banana split", "g1_2_t": "Banana, three scoops, chocolate and whipped cream.", "tab1": "Ice cream", "g2_0": "Latte macchiato", "g2_0_t": "Or a cappuccino, a tea, a milkshake. To go with the waffle.", "tab2": "Coffee", "f0": "In the town centre", "f0_t": "Kerkstraat 33, two minutes from the seafront.", "f1": "Made to order", "f1_t": "Waffles and pancakes baked when you order.", "f2": "Also to take away", "f2_t": "A waffle for the walk to the sea.", "nav_kaart": "Menu", "nav_terras": "The place", "nav_verhaal": "Our story", "nav_uren": "Opening hours", "bel_kort": "Call us", "bel": "Call us", "naar_kaart": "See the menu", "kaart_titel": "The menu", "uren_titel": "Opening hours", "route": "Directions", "sinds": "Tea room and restaurant in Blankenberge, since 1949", "held_titel": "The giant waffle of Blankenberge.", "held_sub": "Brussels waffles, fresh pancakes, ice cream and coffee, two minutes from the seafront.", "label_titel": "Biscoff waffle", "label_tekst": "With whipped cream", "kaart_intro": "Everything is made when you order. Also croques, toasts and salads if you prefer savoury.", "noot": "Also croques, toasts, salads, milkshakes and tea. Ask for today’s menu.", "terras_titel": "Just walk in", "terras_tekst": "A bright room with chandeliers in the middle of the shopping street. A break from the busy seafront.", "verhaal_titel": "For more than 75 years", "verhaal_tekst": "Au Pingouin has been here since 1949. Generations of beachgoers came for a waffle after the beach, and their grandchildren still do.", "eenheid": "years", "reviews_onder": "on Google, from 685 reviews", "uren_noot": "Off-season open at weekends. In summer every day from 11:30.", "dagen": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "gesloten": "Closed", "nu_open": "Open now · today until ", "open_vanaf": "Opens today at ", "nu_dicht": "Closed now · ", "morgen": "tomorrow", "vanaf": " opens at ", "band": ["Brussels waffle", "Pancake", "Waffle with whipped cream", "Dame blanche", "Strawberry sundae", "Banana split", "Latte macchiato"]}, "de": {"g0_0": "Brüsseler Waffel", "g0_0_t": "Leicht und knusprig, mit Puderzucker oder warmer Schokoladensoße.", "g0_1": "Pfannkuchen", "g0_1_t": "Frisch gebacken, nie vorgebacken. Mit Zucker, Sirup oder Konfitüre.", "g0_2": "Waffel mit Sahne", "g0_2_t": "Der Klassiker, mit einer ordentlichen Portion frischer Sahne.", "tab0": "Waffeln & Pfannkuchen", "g1_0": "Dame blanche", "g1_0_t": "Vanilleeis, Sahne und eine knusprige Waffel.", "g1_1": "Erdbeerbecher", "g1_1_t": "Frische Erdbeeren, Eis und Soße. Der Sommer im Becher.", "g1_2": "Banana Split", "g1_2_t": "Banane, drei Kugeln, Schokolade und Sahne.", "tab1": "Eis", "g2_0": "Latte macchiato", "g2_0_t": "Oder ein Cappuccino, ein Tee, ein Milchshake. Zur Waffel.", "tab2": "Kaffee", "f0": "Im Zentrum", "f0_t": "Kerkstraat 33, zwei Minuten vom Deich.", "f1": "Frisch gebacken", "f1_t": "Waffeln und Pfannkuchen auf Bestellung.", "f2": "Auch zum Mitnehmen", "f2_t": "Eine Waffel für den Weg zum Meer.", "nav_kaart": "Die Karte", "nav_terras": "Das Lokal", "nav_verhaal": "Unsere Geschichte", "nav_uren": "Öffnungszeiten", "bel_kort": "Anrufen", "bel": "Rufen Sie uns an", "naar_kaart": "Zur Karte", "kaart_titel": "Die Karte", "uren_titel": "Öffnungszeiten", "route": "Route", "sinds": "Teestube und Restaurant in Blankenberge, seit 1949", "held_titel": "Die Riesenwaffel von Blankenberge.", "held_sub": "Brüsseler Waffeln, frische Pfannkuchen, Eis und Kaffee, zwei Minuten vom Deich.", "label_titel": "Biscoff-Waffel", "label_tekst": "Mit Sahne", "kaart_intro": "Alles wird frisch zubereitet, wenn Sie bestellen. Auch Croques, Toasts und Salate für alle, die es herzhaft mögen.", "noot": "Auch Croques, Toasts, Salate, Milchshakes und Tee. Fragen Sie nach der Tageskarte.", "terras_titel": "Einfach hereinkommen", "terras_tekst": "Ein heller Raum mit Kronleuchtern mitten in der Einkaufsstraße. Eine Pause vom Trubel am Deich.", "verhaal_titel": "Seit über 75 Jahren", "verhaal_tekst": "Au Pingouin gibt es seit 1949. Generationen von Badegästen kamen nach dem Strand auf eine Waffel, und ihre Enkel tun es noch heute.", "eenheid": "Jahre", "reviews_onder": "auf Google, aus 685 Bewertungen", "uren_noot": "Außerhalb der Saison am Wochenende geöffnet. Im Sommer täglich ab 11:30.", "dagen": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"], "gesloten": "Geschlossen", "nu_open": "Jetzt geöffnet · heute bis ", "open_vanaf": "Heute geöffnet ab ", "nu_dicht": "Jetzt geschlossen · ", "morgen": "morgen", "vanaf": " geöffnet ab ", "band": ["Brüsseler Waffel", "Pfannkuchen", "Waffel mit Sahne", "Dame blanche", "Erdbeerbecher", "Banana Split", "Latte macchiato"]}};
+var UREN = {"1": null, "2": null, "3": null, "4": null, "5": null, "6": ["11:30", "17:45"], "0": ["11:30", "17:45"]};
+var getalDoel = 77;
+var taal = ""; try { taal = localStorage.getItem("taal_aupingouin") || ""; } catch(e) {}
+if (!T[taal]) { var n = (navigator.language || "nl").slice(0,2); taal = T[n] ? n : "nl"; }
+function min(s){ var p = s.split(":"); return +p[0]*60 + +p[1]; }
+function zet(l){
+  var t = T[l]; document.documentElement.lang = l;
+  document.querySelectorAll("[data-t]").forEach(function(el){ var k = el.getAttribute("data-t"); if (typeof t[k] === "string") el.textContent = t[k]; });
+  document.querySelectorAll(".talen button").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.lang === l ? "true" : "false"); });
+  var html = "", nu = new Date(), d = nu.getDay(), tm = nu.getHours()*60 + nu.getMinutes();
+  [1,2,3,4,5,6,0].forEach(function(i){ var u = UREN[i], dag = t.dagen[i]; dag = dag.charAt(0).toUpperCase() + dag.slice(1);
+    html += "<tr" + (i===d ? ' class="nu"' : "") + "><td>" + dag + "</td><td" + (u ? "" : ' class="dicht"') + ">" + (u ? u[0] + " – " + u[1] : t.gesloten) + "</td></tr>"; });
+  document.getElementById("uren").innerHTML = html;
+  var st = document.getElementById("status"), sp = st.querySelector("span"), u = UREN[d]; st.classList.remove("dicht");
+  if (u && tm >= min(u[0]) && tm < min(u[1])) sp.textContent = t.nu_open + u[1];
+  else { st.classList.add("dicht"); var v = (d+1)%7, k = 1; while (!UREN[v] && k < 7) { v = (v+1)%7; k++; }
+    sp.textContent = (u && tm < min(u[0])) ? t.open_vanaf + u[0] : (UREN[v] ? t.nu_dicht + (k===1 ? t.morgen : t.dagen[v]) + t.vanaf + UREN[v][0] : t.gesloten); }
+  var rij = t.band.map(function(g){ return "<span>" + g + "<i></i></span>"; }).join("");
+  document.getElementById("band").innerHTML = rij + rij;
+  try { localStorage.setItem("taal_aupingouin", l); } catch(e) {}
+}
+document.querySelectorAll(".talen button").forEach(function(b){ b.addEventListener("click", function(){ zet(b.dataset.lang); }); });
+zet(taal);
+document.querySelectorAll(".tabs button").forEach(function(b){ b.addEventListener("click", function(){
+  document.querySelectorAll(".tabs button").forEach(function(x){ x.setAttribute("aria-selected", x===b ? "true" : "false"); });
+  document.querySelectorAll(".groep").forEach(function(g){ g.classList.remove("aan"); });
+  var g = document.getElementById("g-" + b.dataset.groep); void g.offsetWidth; g.classList.add("aan"); }); });
+var rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, {threshold:.15});
+document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
+var kop = document.getElementById("kop"), pot = document.getElementById("pot"), achter = document.querySelector(".achter");
+function scroll(){ var y = window.scrollY; kop.classList.toggle("vast", y > 30);
+  if (!rm && y < window.innerHeight * 1.2) { pot.style.transform = "translateY(" + (y*0.18) + "px) rotate(" + (y*0.03) + "deg)"; achter.style.marginLeft = (-y*0.25) + "px"; } }
+window.addEventListener("scroll", scroll, {passive:true}); scroll();
+var gt = document.getElementById("getal"), geteld = false;
+if (getalDoel && !rm) new IntersectionObserver(function(es){ if (es[0].isIntersecting && !geteld) { geteld = true; var t0 = performance.now(), van = 0;
+  (function tik(nu){ var k = Math.min(1, (nu-t0)/1600), e = 1 - Math.pow(1-k, 3); gt.textContent = Math.round(van + e*(getalDoel-van)) + ""; if (k < 1) requestAnimationFrame(tik); })(t0); } }, {threshold:.5}).observe(gt);
+</script>
+</body>
+</html>
