@@ -103,6 +103,10 @@ footer.voet{padding:40px 0;border-top:1px solid var(--lijn)}footer.voet .wrap{di
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}.reveal.in{opacity:1;transform:none}
 :focus-visible{outline:2px solid var(--oker);outline-offset:3px;border-radius:6px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.achter{clip-path:none}.reveal,.gerecht{opacity:1;transform:none}}
+.pot img.foto{aspect-ratio:4/5;object-fit:cover;border-radius:28px;filter:none;box-shadow:0 40px 70px rgba(20,25,30,.28);transform-origin:center}
+.pot:has(img.foto) img{rotate:2deg}
+.gerecht .beeld img.foto{flex:1 1 100%;align-self:stretch;width:100%;max-width:none;height:100%;max-height:none;object-fit:cover;border-radius:14px;filter:none}
+.gerecht:hover .beeld img.foto{transform:scale(1.03)}
 .strook{background:repeating-linear-gradient(90deg,#111 0 26px,#1e1e1e 26px 52px)}.gerecht{background:#F7F6F3}.kaartsectie{background:#fff}.reviews{background:#fff}
 </style>
 </head>
@@ -124,7 +128,7 @@ footer.voet{padding:40px 0;border-top:1px solid var(--lijn)}footer.voet .wrap{di
       <div class="status" id="status"><i></i><span>…</span></div>
       <div class="knoppen"><a class="knop" href="tel:+32476633235" data-t="bel">Bel ons</a><a class="knop rand" href="#kaart" data-t="naar_kaart">Bekijk de kaart</a></div>
     </div>
-    <div class="pot"><img id="pot" src="img/held.webp" alt="Brusselse wafel met Biscoff en slagroom"><div class="label"><b data-t="label_titel">Wafel Biscoff</b><span data-t="label_tekst">Met slagroom</span></div></div>
+    <div class="pot"><img id="pot" class="" src="img/held.webp" alt="Brusselse wafel met Biscoff en slagroom"><div class="label"><b data-t="label_titel">Wafel Biscoff</b><span data-t="label_tekst">Met slagroom</span></div></div>
   </div>
 </section>
 <div class="strook" aria-hidden="true"><div class="band" id="band"></div></div>
@@ -152,7 +156,7 @@ footer.voet{padding:40px 0;border-top:1px solid var(--lijn)}footer.voet .wrap{di
 <section class="praktisch" id="praktisch"><div class="wrap">
   <div class="reveal"><h2 class="h2" data-t="uren_titel">Openingsuren</h2><table class="uren" id="uren"></table>
   <p class="adres">Kerkstraat 33, 8370 Blankenberge<br><a href="tel:+32476633235">+32 476 63 32 35</a><br><span data-t="uren_noot">Buiten het seizoen open in het weekend. In de zomer elke dag vanaf 11u30.</span></p></div>
-  <div class="kaartbox"><iframe title="Au Pingouin" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=place_id:ChIJg1tr1nyqxEcR5Ik-QANqo4I&amp;output=embed"></iframe></div>
+  <div class="kaartbox"><iframe title="Au Pingouin" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Au+Pingouin%2C+Kerkstraat+33%2C+8370+Blankenberge&amp;output=embed"></iframe></div>
 </div></section>
 </main>
 <footer class="voet"><div class="wrap"><span>© Au Pingouin, Blankenberge</span><span>Kerkstraat 33 · +32 476 63 32 35</span></div></footer>
